@@ -1,0 +1,20 @@
+name: tests
+on:
+  push:
+  pull_request:
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Install Volatility 3 and test dependencies
+        run: pip install -r requirements.txt -r requirements-dev.txt
+      - name: Unit tests (synthetic memory, no image needed)
+        run: bash tests/run_tests.sh
+      - name: The ten plugin classes load
+        run: |
+          n=$(vol -p plugins -h | grep -cE "ferric\.(provenance|strings|maps|vtables|tokio|win)\.")
+          echo "classes listed: $n"; test "$n" -ge 10

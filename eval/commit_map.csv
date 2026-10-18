@@ -1,0 +1,4 @@
+# rustc commit -> version map for real samples (use with: ferric.provenance.Provenance --commit-map eval/commit_map.csv)
+# verified against rust-lang/rust release tags (git ls-remote), Session 52.
+fe5b13d681f25ee6474be29d748c65adcd91f69e,1.61.0
+# 532d2b14c05f9bc20b2d27cbb5f4550d28343a36 = NOT a stable/beta release tag -> nightly toolchain (~late 2021 by vendored deps); left unmapped on purpose

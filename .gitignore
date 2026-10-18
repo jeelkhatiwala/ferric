@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.venv/
+*.elf
+*.elf.xz
+*.lime
+*.raw
+*.dmp
