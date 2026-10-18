@@ -26,13 +26,23 @@ Ten plugin classes, five capabilities on each OS:
 | trait-object vtables | ferric.vtables.VTables | ferric.win.VTables |
 | tokio tasks | ferric.tokio.Tokio | ferric.win.Tokio |
 
+## Motivation
+
+Rust has become a mainstream language for serious malware. BlackCat/ALPHV, the Rust rewrite of Hive, the
+Rust variants of Agenda/Qilin and Akira, and stealers such as Luca are all written in it. An investigator
+holding a memory image from a host hit by one of these faces a process whose binary is stripped, whose
+constants may sit inside its code pages, and for which no symbol server, runtime table or existing plugin
+offers a foothold. Memory forensics for runtime-rich languages has matured over a decade, from Objective-C
+and .NET through the V8 engine and Python to Go, whose memory-forensics paper took the best paper award at
+DFRWS USA 2026. Rust was left out, and the reason is structural: it ships none of the runtime metadata
+those tools bootstrap from. ferric was built to show that Rust state can be recovered anyway, from
+compiler-stable layout invariants rather than metadata, and to measure that recovery against ground truth
+so that an analyst knows exactly which rows to trust.
+
 ## Why it should win
 
-**It fills a real and current gap.** Rust is now common in serious malware: BlackCat/ALPHV, the Rust
-rewrite of Hive, the Rust variants of Agenda/Qilin and Akira, and Rust stealers such as Luca. An analyst
-working from a memory image of one of these has, until now, no Rust-aware tooling at all. The language
-memory-forensics line of work has reached Objective-C, .NET, the V8 engine, Python and most recently Go
-(best paper at DFRWS USA 2026). Rust was the conspicuous gap. ferric closes it.
+**It fills a real and current gap.** Until ferric, an analyst with a memory image of any of the families
+named above had no Rust-aware tooling at all. ferric is the first, on Linux and on Windows.
 
 **It is technically harder than the languages already covered, and solves that difficulty.** Go embeds
 pclntab and moduledata, a program-wide table a tool can parse to bootstrap everything else. Python, .NET
@@ -108,7 +118,7 @@ is itself a result. Each genuine Rust sample carried its own distinct compiler c
 
 Two of these samples were recoverable at all only after a defect uncovered during this work, and the fix is
 a clean before-and-after. f8c08d00 and 45b8678f link their read-only constants into the text segment, a
-layout none of the 82 controls use. The original recogniser inspected only a separate read-only-data
+layout none of the ground-truth control images use. The original recogniser inspected only a separate read-only-data
 segment, so it both refused to scan these two (the compiler fingerprint was in the code pages, not a rodata
 segment) and, once that was addressed, still rejected every `&str` and Location whose bytes lived in that
 merged segment. Two gated changes fixed this. The first widened the fingerprint test to the executable's
@@ -144,6 +154,8 @@ is the remaining piece and is pending sample acquisition.
 - This write-up.
 - A signed Individual Contributor License Agreement.
 - Entry type: one entry, the ferric suite (the capabilities share the recognisers and are strongest together).
+- Copyright: the author owns the copyright to the submitted source code and is authorized to submit it. The
+  code is released under the MIT licence (LICENSE in the repository).
 
 ## Honest limitations
 
