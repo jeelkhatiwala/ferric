@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If ferric contributes to a publication, a report, a course or a derived tool, please cite it as below. A paper describing the method and the evaluation is in preparation; this file will carry its reference (preferred-citation) once it is published."
+title: "ferric: Rust memory forensics for Volatility 3"
+abstract: "A suite of Volatility 3 plugins that recovers Rust program state from Linux and Windows memory images without symbols for the program: compiler and crate provenance, String, &str and panic-Location records, hashbrown HashMap/HashSet tables with their entries, trait-object vtables with live-instance counts, and tokio async tasks. Validated against ground truth on 81 memory images across five rustc versions and both Windows linkers, with negative controls in C++, Go and .NET on both operating systems."
+type: software
+authors:
+  - family-names: Khatiwala
+    given-names: Jeel Piyushkumar
+version: 1.0.0
+date-released: "2026-10-18"
+license: MIT
+repository-code: "https://github.com/jeelkhatiwala/ferric"
+url: "https://github.com/jeelkhatiwala/ferric"
+keywords:
+  - memory forensics
+  - Volatility 3
+  - Rust
+  - malware analysis
+  - digital forensics
+  - incident response

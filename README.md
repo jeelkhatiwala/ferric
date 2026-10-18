@@ -358,6 +358,18 @@ ferric is written by Jeel Piyushkumar Khatiwala and released under the MIT Licen
 developed as the tooling for a study of Rust memory forensics; the write-up (`WRITEUP.md`) describes the
 method and the full evaluation.
 
+## Citing ferric
+
+If ferric contributes to a publication, a report, a course or a derived tool, please cite it. The "Cite
+this repository" button on GitHub (from `CITATION.cff`) gives BibTeX and APA; the plain form is:
+
+> Khatiwala, J. P. (2026). *ferric: Rust memory forensics for Volatility 3* (Version 1.0.0) [Computer
+> software]. https://github.com/jeelkhatiwala/ferric
+
+A paper describing the method and the evaluation is in preparation; `CITATION.cff` will carry its reference
+when it is published. Credit in derived tools and acknowledgement in reports are appreciated. The licence
+itself requires only that the copyright notice travels with copies.
+
 ## References
 
 - Volatility 3 documentation: https://volatility3.readthedocs.io/
