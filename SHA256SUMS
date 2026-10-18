@@ -21,7 +21,7 @@ be5cde6a317338f2804ba484de92efb11b7cada56b7ae3d273e32492cd4a670f  ./plugins/ferr
 62af6af0c1e5a67a2ed974d59999f6094722c991fb673eb1f6f81e582ce349e3  ./plugins/ferric/tokio.py
 83c3b32f501c63135370fd86a3b8c9bfd384195e8b1adb1c8d3a3b863cd6ec60  ./plugins/ferric/vtables.py
 d9d8a9b37ca4bbaccddec3151cb0f7cf804ff85965d3fe2f4cd6e696e61da488  ./plugins/ferric/win.py
-0dd966912e1f9f7147baee49724fedb30fa5844ea7c31dfb2ab21f61e4dccc07  ./README-DEMO.md
+6ed1bbe832a7cbff3244a378012b8695e2fad9874a3b70f2b682d4d6ac784f58  ./README-DEMO.md
 23e1fe33455cf6bb30a23b4316dfcce3a8fac87372e6646c810c06ad19995d47  ./README.md
 b426dc98aa72db6e556b33154ee30a265fadf347fb46498f67553235b3277a07  ./requirements-dev.txt
 46a36056a8034a06f195654dcc518e283f6855cebba9ae2dfcbbc5475951115d  ./requirements.txt

@@ -1,5 +1,7 @@
 # ferric demo memory images: expected output
 
+**Download:** the images are release assets at https://github.com/jeelkhatiwala/ferric/releases/tag/v1.0.0 (compressed with xz; the sha256 of each `.xz` is in the release notes, the sha256 of each uncompressed image is below). Decompress with `xz -d <file>.xz`.
+
 The memory sample(s) for the Volatility Plugin Contest 2026 submission. Each holds one process running a
 self-compiled Rust program (`seed02_tokio`, the project's tokio control seed) that exercises all five
 ferric capabilities at once. It is not malware and contains no third-party code beyond the program's
